@@ -11,7 +11,10 @@ const Navcontainer=styled.div`
     width:100%;
     border-bottom:5px solid rgb(245, 161, 4);
     // border:1px solid;
+    @media only screen and (max-width: 750px){
+        bottom:0vh;
 
+    }
     
     div{
         display:inline-block;
@@ -33,14 +36,7 @@ const Navcontainer=styled.div`
         color:rgb(245, 161, 4);
         cursor: pointer;
     }
-    @media only screen and (max-width: 750px){
-        #nav{
-            width:500px;
-          }
-          #nav>div{
-            margin: auto;
-          }
-      }
+    
 
 `
 export const Navbar = () => {

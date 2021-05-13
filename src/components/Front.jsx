@@ -7,8 +7,10 @@ import {Particles} from './Particles'
 import image from '../images/background/croppedbackground.jpg'
 
 export const Front = () => {
+   
+
     return (    
-        <>
+         <>
             <div className={styles.container} >
                 <img src={image} alt="portfolio"/>  
             </div>

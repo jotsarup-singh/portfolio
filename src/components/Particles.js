@@ -7,7 +7,10 @@ const useStyles = makeStyles(() => ({
     position:"absolute",
     opacity: "0.6",
     zIndex:"2",
-    top:"0"
+    top:"0",
+    left:"0",
+    right:"0",
+    width:"100%"
   }
 }));
 

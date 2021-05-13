@@ -15,6 +15,8 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import VideocamIcon from '@material-ui/icons/Videocam';
 import styled from "styled-components";
 import style from '../styles/projects.module.css'
+import Slide from 'react-reveal/Slide';
+import ComputerOutlinedIcon from '@material-ui/icons/ComputerOutlined';
 
 // const random = ()=>{
 //     var max = 160
@@ -34,11 +36,11 @@ const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
     height: "100%",
+    
   },
   cardContainer: {
     maxWidth: 400,
     margin: "50px auto",
-    // height:"80vh",
     minHeight:"80vh"
   },
 }));
@@ -47,28 +49,30 @@ const projects = [
   {
     name: "The Hindu",
     description: `The Hindu is the second most circulated English-
-    language newspaper in India we team of 4 people created this in 4 days using different stack:-React js,Redux,Material ui.`,
+    language newspaper in India.It was cloned using React.JS,Redux and Material UI. A user can register, login to web app and read allthe news available`,
     image: projectone,
     github:"https://github.com/Jammy12345/Team-Butane-THE-HINDU",
     video:"https://www.linkedin.com/posts/jotsarupsingh21_reactjs-redux-thehindu-activity-6782676639403806721-SPnh",
-    stack:["React-js","Redux","Material-Ui"]
+    stack:["React.JS","Redux","Material-UI"],
+    link:"https://the-hindu-1w79mgmmr-ashishbhagat123.vercel.app/"
     },
   {
     name: "RentoMojo",
-    description: `India's leading rental platform brings to you a wide range of products on rent.We used vanilla javascript with html and css and created the clone in 3 days with the help of 2 other members.`,
+    description: `India's leading rental platform brings to you a wide range of products on rent.We used vanilla JavaScript with HTML and CSS.A user can choose products from a wide range,add to the cart and checkout.`,
     image: projecttwo,
-    github:"https://github.com/tejas170893/Project-Titans-Beryllium-Rentomojo.com-Clone",
+    github:"https://github.com/Rakesh-Thampy/Rentomojo_Clone",
     video:"https://www.linkedin.com/posts/jotsarupsingh21_rentomojoclone-vanillajavacsript-justgettingstarted-activity-6764862927502663681-KZE0",
-    stack:["Javascript","API","CSS","Html"]
-    
+    stack:["JavaScript","API","CSS","HTML"],
+    link:"https://gracious-dubinsky-c3b1ed.netlify.app"
   },
   {
     name: "Sumopayroll",
-    description: "Sumopayroll is a cloud based Employee Payroll and HR Management platform.We have used"
+    description: "sumopayroll is a cloud based Employee Payroll and HR Management platform. First ever try to clone a website made a few static pages. We used HTML and CSS and JavaScript."
     ,
     image: projectthree,
     github:"https://github.com/AmanSingh-code/sumopayroll_project",
-    stack:["Javascript","CSS","Html"]
+    stack:["JavaScript","CSS","HTML"],
+    video:"https://youtu.be/DeY2OnBfrPk"
   }
 ];
 
@@ -79,12 +83,13 @@ export const Projects = () => {
   return (
 < div className={style.container} id="project" >
 <Typography style={{fontSize:`calc(${20}px + ${1}vw)`}} variant="h4" align="center" gutterBottom>PROJECTS</Typography>
+<Slide bottom>
 
     <Box component="div" className={classes.mainContainer}>
       <Grid container justify="center">
         {/* Projects */}
         {projects.map((project, i) => (
-          <Grid item xs={12} sm={8} md={6} lg={4} key={i}>
+          <Grid item xs={12} sm={12} md={6} lg={4} key={i}>
             <Card className={classes.cardContainer}>
               <CardActionArea>
                 <CardMedia
@@ -109,11 +114,16 @@ export const Projects = () => {
                 <IconButton target="_blank" href={project.github}>
                     <GitHubIcon style={{fontSize:"35px"}} className={classes.root}/>
                 </IconButton>
+                {project.link &&<IconButton target="_blank" href={project.link}>
+                    <ComputerOutlinedIcon style={{fontSize:"38px"}} className={classes.root} />
+                    
+                </IconButton>}
             </Card>
           </Grid>
         ))}
       </Grid>
     </Box>
+</Slide>
 </div>
   );
 };

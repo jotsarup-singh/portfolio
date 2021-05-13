@@ -4,30 +4,29 @@ import TextField from '@material-ui/core/TextField';
 import { 
   Button, 
   Card, 
-  Typography,
-  // createMuiTheme,
-  // responsiveFontSizes,
-  // MuiThemeProvider, 
+  Typography
 }   
 from '@material-ui/core';
 import emailjs from 'emailjs-com';
 import bgemail from '../images/background/pngaaa.com-14030.png'
+import style from '../styles/contactme.module.css'
+import Slide from 'react-reveal/Slide';
 
 
 const useStyles = makeStyles((theme) => ({
     form: {
-        margin: theme.spacing(1),
-        width: '45ch' ,     
-      },
+        width: '98%' ,
+        margin:"1%"
+         },
       card:{
-        width:'50ch',
+        width:'80%',
         padding:"30px 10px",
         margin:"50px auto",
         opacity:"0.7"
       },
       button:{
         margin: theme.spacing(1),
-        width: '100%' ,
+        width: '97%' ,
         padding:"8px 0", 
         opacity:"1"
       }
@@ -50,13 +49,14 @@ export function Contactme() {
   }
 
   return (
-      <div id="contact">
+      <div className={style.container} id="contact">
         <div style={{  
           backgroundImage: "url(" + bgemail+ ")",
           backgroundPosition: 'center',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat'
         }} >
+        <Slide top>
         <Typography style={{margin:"20px", fontSize:`calc(${20}px + ${1}vw)`}} variant="h4" align="center" gutterBottom>CONTACT ME</Typography>
         <Card className={classes.card} variant="outlined">
             <form onSubmit={sendEmail} className={classes.form} noValidate autoComplete="off">
@@ -72,6 +72,7 @@ export function Contactme() {
                   </Button> 
              </form>
         </Card>
+        </Slide>
         </div>
     </div>
 

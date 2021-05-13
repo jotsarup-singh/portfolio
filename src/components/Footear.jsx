@@ -21,14 +21,9 @@ const useStyles = makeStyles({
   );
 export const Footear = () => {
     const classes=useStyles()
-    let [size,setsize]=React.useState(true)
-  
-    const handleWindowResize = () => {
-      setsize( window.innerWidth >840 )
-    }
-  
-    window.addEventListener("resize",handleWindowResize)
-    return size && (
+    
+
+    return(
         <div className={style.footear}>
             <div className={style.footearcontainer}>
                 <div className={style.information} >
@@ -41,7 +36,7 @@ export const Footear = () => {
                 </div>
                 <div className={style.information}>
                     <PhoneIcon className={classes.icon}/>
-                    <h3>9205527097</h3>
+                    <h3>+91 - 9205527097</h3>
                 </div>
                 <div className={style.information}>
                     <PersonIcon className={classes.icon}/>

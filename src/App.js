@@ -8,11 +8,14 @@ import { Footear } from './components/Footear';
 import React from 'react'
 
 function App() {
-
+  const [show,setShow]=React.useState(false)
+  React.useEffect(()=>{
+    setShow(true)
+  },[])
 
   
   return (
-    <div className="App">
+    show && <div className="App">
       <Front/>
       <Navbar/>
       <Aboutme/>
